@@ -1,0 +1,59 @@
+<body>
+<div class="container">
+	<h1><font color = "blue" style="font-family:Comic Sans MS" ><b>TIC-TAC-TOE</b></font></h1>
+
+	
+<div class="row">
+	<div class="col-md-8">
+		<div class="game-area">
+			<md-grid-list class="tick-tack-grid" cols="3">
+				<md-grid-tile *ngFor="let block of gs.blocks; let i = index; trackBy: trackByFn" (click)="playerClick(i)"><i [class]="block.symbol == 'done' ? 'material-icons tick' : 'material-icons cross'">{{ block.symbol }}</i></md-grid-tile>
+			</md-grid-list>
+
+
+		</div>
+		
+	</div>
+</div><br><br>
+
+</div>
+
+	<div class="col-md-4">
+		<table class="table borderless" >
+			<h1><font color = "green">Score:</font></h1>
+			<tbody>
+				<tr>
+					<td><h2>You:</h2></td>
+					<td><h2><font color = "red" >{{ gs.players[0].score }}</font></h2></td>
+				</tr>
+
+				<tr>
+					<td><h2>Computer:</h2></td>
+					<td><h2><font color = "green">{{ gs.players[1].score }}</font></h2></td>
+				</tr>
+
+				<tr>
+					<td><h2>Draw:</h2></td>
+					<td><h2><font color = "blue">{{ gs.draw }}</font></h2></td>
+				</tr>
+
+			</tbody>
+			
+		</table>
+       <br><br>
+		<table><tr><td><button class = "btn btn-primary" (click)="resetGame($event)" href="#">Reset Game</button></td><td> </td><td></td>
+
+		
+		<td><a class="pull-right text-right" class="btn btn-danger" (click)="newGame($event)" href="#">New Game</a></td></tr></table>
+	</div>
+</body>
+	
+
+	
+
+
+  
+
+
+  
+
